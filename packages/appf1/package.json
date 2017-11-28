@@ -1,6 +1,6 @@
 {
   "name": "appf1",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "libf1": "^0.1.1"
+    "libf1": "^0.1.3"
   }
 }
