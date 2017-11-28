@@ -1,23 +1,73 @@
-0 silly input [ 'libf1' ]
-1 silly flags { _: [ 'add' ],
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   scope: 'appf1',
-1 silly flags   args: [ 'libf1' ] }
+1 silly flags   args: [] }
 2 verbose rootPath /Users/trossi/demo/lerna-fixed
 3 info version 2.5.1
-4 silly isInitialized
-5 silly isInitialized true
-6 silly existsSync /Users/trossi/demo/lerna-fixed/VERSION
-7 info scope appf1
-8 error EPACKAGES Errored while collecting packages and package graph
-9 error Error: No packages found that match scope 'appf1'
-9 error     at Function.filterPackages (/usr/local/lib/node_modules/lerna/lib/PackageUtilities.js:217:17)
-9 error     at AddCommand.runPreparations (/usr/local/lib/node_modules/lerna/lib/Command.js:326:60)
-9 error     at /usr/local/lib/node_modules/lerna/lib/Command.js:225:18
-9 error     at AddCommand.run (/usr/local/lib/node_modules/lerna/lib/Command.js:212:14)
-9 error     at Object.handler (/usr/local/lib/node_modules/lerna/lib/commands/AddCommand.js:71:77)
-9 error     at Object.self.runCommand (/usr/local/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
-9 error     at Object.Yargs.self._parseArgs (/usr/local/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
-9 error     at Object.Yargs.self.parse (/usr/local/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)
-9 error     at Object.<anonymous> (/usr/local/lib/node_modules/lerna/bin/lerna.js:4:25)
+4 silly existsSync /Users/trossi/demo/lerna-fixed/VERSION
+5 silly initialize attempt
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: undefined,
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: undefined }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 4 packages
+10 info lifecycle preinstall
+11 silly runScript preinstall appf2
+12 silly appf2
+13 silly runScript preinstall libf1
+14 silly libf1
+15 silly runScript preinstall libf2
+16 silly libf2
+17 silly runScript preinstall appf1
+18 silly appf1
+19 silly hasMatchingDependency appf1 libf1
+20 silly hasDependencyInstalled appf2 libf2
+21 silly dependencyIsSatisfied [ 'libf2',
+21 silly dependencyIsSatisfied   '0.1.3',
+21 silly dependencyIsSatisfied   '/Users/trossi/demo/lerna-fixed/packages/appf2/node_modules' ]
+22 verbose dependencyIsSatisfied libf2 false
+23 silly root dependencies []
+24 silly leaf dependencies {
+24 silly leaf dependencies   "appf2": [
+24 silly leaf dependencies     {
+24 silly leaf dependencies       "dependency": "libf2@0.1.3",
+24 silly leaf dependencies       "isSatisfied": false
+24 silly leaf dependencies     }
+24 silly leaf dependencies   ]
+24 silly leaf dependencies }
+25 info Installing external dependencies
+26 verbose actions 1 actions, concurrency 4
+27 silly installInDir appf2 [ 'libf2@0.1.3' ]
+28 silly installInDir backup /Users/trossi/demo/lerna-fixed/packages/appf2/package.json
+29 silly rename [ '/Users/trossi/demo/lerna-fixed/packages/appf2/package.json',
+29 silly rename   '/Users/trossi/demo/lerna-fixed/packages/appf2/package.json.lerna_backup' ]
+30 silly installInDir writing tempJson { dependencies: { libf2: '0.1.3' } }
+31 silly getExecOpts { cwd: '/Users/trossi/demo/lerna-fixed/packages/appf2' }
+32 silly installInDir [ 'npm', [ 'install' ] ]
+33 silly installInDir cleanup /Users/trossi/demo/lerna-fixed/packages/appf2/package.json
+34 silly renameSync [ '/Users/trossi/demo/lerna-fixed/packages/appf2/package.json.lerna_backup',
+34 silly renameSync   '/Users/trossi/demo/lerna-fixed/packages/appf2/package.json' ]
+35 verbose installed leaf appf2
+36 error execute callback with error
+37 error Error: Command failed: npm install
+37 error npm ERR! Darwin 16.7.0
+37 error npm ERR! argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+37 error npm ERR! node v7.5.0
+37 error npm ERR! npm  v4.1.2
+37 error npm ERR! code ETARGET
+37 error
+37 error npm ERR! notarget No compatible version found: libf2@0.1.3
+37 error npm ERR! notarget Valid install targets:
+37 error npm ERR! notarget 0.1.2, 0.1.4, 0.1.5
+37 error npm ERR! notarget
+37 error npm ERR! notarget This is most likely not a problem with npm itself.
+37 error npm ERR! notarget In most cases you or one of your dependencies are requesting
+37 error npm ERR! notarget a package version that doesn't exist.
+37 error
+37 error npm ERR! Please include the following file with any support request:
+37 error npm ERR!     /Users/trossi/demo/lerna-fixed/packages/appf2/npm-debug.log
+37 error
+37 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)

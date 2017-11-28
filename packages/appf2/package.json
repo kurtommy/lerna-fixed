@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "libf2": "^0.1.5"
+    "libf2": "0.1.2"
   }
 }
